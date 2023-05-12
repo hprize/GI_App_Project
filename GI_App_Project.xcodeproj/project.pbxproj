@@ -14,6 +14,7 @@
 		6F0C67772A0DDC6A0076658E /* GI_App_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0C67762A0DDC6A0076658E /* GI_App_ProjectTests.swift */; };
 		6F0C67812A0DDC6A0076658E /* GI_App_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0C67802A0DDC6A0076658E /* GI_App_ProjectUITests.swift */; };
 		6F0C67832A0DDC6A0076658E /* GI_App_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0C67822A0DDC6A0076658E /* GI_App_ProjectUITestsLaunchTests.swift */; };
+		6F0C67902A0DDD700076658E /* .gitattributes in Resources */ = {isa = PBXBuildFile; fileRef = 6F0C678F2A0DDD700076658E /* .gitattributes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		6F0C677C2A0DDC6A0076658E /* GI_App_ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GI_App_ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0C67802A0DDC6A0076658E /* GI_App_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GI_App_ProjectUITests.swift; sourceTree = "<group>"; };
 		6F0C67822A0DDC6A0076658E /* GI_App_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GI_App_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6F0C678F2A0DDD700076658E /* .gitattributes */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitattributes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		6F0C67592A0DDC690076658E = {
 			isa = PBXGroup;
 			children = (
+				6F0C678F2A0DDD700076658E /* .gitattributes */,
 				6F0C67642A0DDC690076658E /* GI_App_Project */,
 				6F0C67752A0DDC6A0076658E /* GI_App_ProjectTests */,
 				6F0C677F2A0DDC6A0076658E /* GI_App_ProjectUITests */,
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F0C676D2A0DDC6A0076658E /* Preview Assets.xcassets in Resources */,
+				6F0C67902A0DDD700076658E /* .gitattributes in Resources */,
 				6F0C676A2A0DDC6A0076658E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
