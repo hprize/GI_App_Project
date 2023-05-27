@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var fetcher = MealDataFetcher()
     var body: some View {
         TabView {
             HomeView()
@@ -30,6 +31,16 @@ struct ContentView: View {
                     Image(systemName: "gearshape.fill")
                     Text("설정")
                 }
+        }
+        .environmentObject(fetcher)
+        .task {
+            do
+            {
+                try await fetcher.sendRequest()
+                
+            } catch {
+                print(error)
+            }
         }
     }
 }

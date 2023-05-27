@@ -10,23 +10,35 @@ import SwiftUI
 struct Home_NoticePart: View {
     var body: some View {
         VStack {
-            List {
-                HStack {
-                    Text("[2023 1모듈 5주차 주간 교육과정운")
-                    Text("#운영 #시간표")
-                }
-                HStack {
-                    Text("[2023 1모듈 5주차 주간 교육과정운")
-                    Text("#운영 #시간표")
-                }
-
-                HStack {
-                    Text("[2023 1모듈 5주차 주간 교육과정운")
-                    Text("#운영 #시간표")
-                }
-
+            HStack {
+                Text("[2023 1모듈 5주차 주간 교육과정운")
+                Text("#운영 #시간표")
+                    .font(.system(size: 14))
+                    .fontWeight(.light)
+                    .foregroundColor(Color(hex: 0x707070))
+            }
+            Divider()
+            HStack {
+                Text("[2023 1모듈 5주차 주간 교육과정운")
+                Text("#운영 #시간표")
+                    .font(.system(size: 14))
+                    .fontWeight(.light)
+                    .foregroundColor(Color(hex: 0x707070))
+            }
+            Divider()
+            HStack {
+                Text("[2023 1모듈 5주차 주간 교육과정운")
+                Text("#운영 #시간표")
+                    .font(.system(size: 14))
+                    .fontWeight(.light)
+                    .foregroundColor(Color(hex: 0x707070))
             }
         }
+        .font(.system(size: 15))
+        .frame(width: 364, height: 148)
+        .background(Color.white)
+        .cornerRadius(9)
+        .shadow(radius: 3)
     }
 }
 

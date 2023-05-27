@@ -8,17 +8,35 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @EnvironmentObject var fetcher: MealDataFetcher
     var body: some View {
-        VStack {
-            Home_NoticePart()
-            Home_MealPart()
-            Home_TimeLinePart()
+        ScrollView (.vertical){
+            VStack {
+                Text(fetcher.menuData.results[0].properties.menu1.richText[0].plainText)
+                    .font(.system(size: 20))
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color(hex: 0x5762EA))
+                    .frame(width: 364, alignment: .leading)
+                Home_NoticePart()
+                    .padding(.vertical, 20)
+                Text("오늘의 점심")
+                    .font(.system(size: 20))
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color(hex: 0x5762EA))
+                    .frame(width: 364, alignment: .leading)
+                    
+                Home_MealPart()
+                    .padding(.vertical, 20)
+                Home_TimeLinePart()
+            }
+            .frame(width: 393)
         }
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeView().environmentObject(MealDataFetcher())
     }
 }
