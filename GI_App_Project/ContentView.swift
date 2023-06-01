@@ -9,37 +9,49 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var fetcher = MealDataFetcher()
+    @State private var selection = 0
     var body: some View {
-        TabView {
-            HomeView()
-                .tabItem {
-                    Image(systemName: "house.fill")
-                    Text("홈")
+        TabView (selection: $selection){
+            NavigationView() {
+                HomeView()
+                    .tabItem {
+                        Image(systemName: "house.fill")
+                        Text("홈")
+                    } .tag(0)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            NavigationLink {
+                                MealView()
+                            } label: {
+                                Image(systemName: "plus")
+                            }
+                        }
+                    }
+                TimeView()
+                    .tabItem {
+                        Image(systemName: "clock.fill")
+                        Text("시간표")
+                    } .tag(1)
+                MealView()
+                    .tabItem {
+                        Image(systemName: "person.fill")
+                        Text("급식")
+                    } .tag(2)
+                SettingView()
+                    .tabItem {
+                        Image(systemName: "gearshape.fill")
+                        Text("설정")
+                    } .tag(3)
+            }
+            .environmentObject(fetcher)
+            .task {
+                do
+                {
+                    try await fetcher.sendRequest()
+                    
+                } catch {
+                    print(error)
                 }
-            TimeView()
-                .tabItem {
-                    Image(systemName: "clock.fill")
-                    Text("시간표")
-                }
-            MealView()
-                .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("급식")
-                }
-            SettingView()
-                .tabItem {
-                    Image(systemName: "gearshape.fill")
-                    Text("설정")
-                }
-        }
-        .environmentObject(fetcher)
-        .task {
-            do
-            {
-                try await fetcher.sendRequest()
-                
-            } catch {
-                print(error)
             }
         }
     }
