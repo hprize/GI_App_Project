@@ -12,21 +12,11 @@ struct ContentView: View {
     @State private var selection = 0
     var body: some View {
         TabView (selection: $selection){
-            NavigationView() {
                 HomeView()
                     .tabItem {
                         Image(systemName: "house.fill")
                         Text("홈")
                     } .tag(0)
-                    .toolbar {
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            NavigationLink {
-                                MealView()
-                            } label: {
-                                Image(systemName: "plus")
-                            }
-                        }
-                    }
                 TimeView()
                     .tabItem {
                         Image(systemName: "clock.fill")
@@ -37,7 +27,7 @@ struct ContentView: View {
                         Image(systemName: "person.fill")
                         Text("급식")
                     } .tag(2)
-                SettingView()
+                SignOutView()
                     .tabItem {
                         Image(systemName: "gearshape.fill")
                         Text("설정")
@@ -55,7 +45,7 @@ struct ContentView: View {
             }
         }
     }
-}
+
 
 extension Color {
     init(hex: UInt, alpha: Double = 1) {
