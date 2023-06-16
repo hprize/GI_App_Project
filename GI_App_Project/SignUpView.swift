@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct SignUpView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
+    @State var selectedItem: PhotosPickerItem? = nil
+    @State var selectedImageData: Data? = nil
     @State var fullName: String = ""
     @State var email: String = ""
     @State var password: String = ""
@@ -17,6 +20,32 @@ struct SignUpView: View {
     
     var body: some View {
         VStack {
+            PhotosPicker(
+                    selection: $selectedItem,
+                    matching: .images,
+                    photoLibrary: .shared()) {
+                        Text("Select a photo")
+                    }
+//                    .onChange(of: selectedItem, perform: { newValue in
+//                        Task {
+//                            if let newValue {
+//                                do {
+//                                    try await authViewModel.saveProfileImage(item: newValue)
+//                                } catch {
+//                                    print(error.localizedDescription)
+//                                }
+//                            }
+//                        }
+//                    })
+            if let selectedImageData,
+               let uiImage = UIImage(data: selectedImageData) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 250, height: 250)
+            }
+            
+            
             TextField(
                 "이름을 입력해주세요.",
                 text: $fullName
@@ -56,7 +85,8 @@ struct SignUpView: View {
             Button {
                 Task {
                     do {
-                        try await authViewModel.registerUser(withEmail: email, password: password, fullName: fullName)
+                        guard let selectedItem else {return}
+                        try await authViewModel.registerUser(item: selectedItem, withEmail: email, password: password, fullName: fullName)
                     } catch {
                         retrySignUp = true
                         errorMessage = error.localizedDescription

@@ -8,13 +8,13 @@
 import Foundation
 
 struct User: Codable {
+    let profileImageURL: String
     let fullName: String
     let email: String
     let uid: String
 }
 
 extension User {
-    static let sample: User = User(fullName: "",
-                                   email: "",
-                                   uid: "")
+    static let sample: User = User(
+        profileImageURL: "", fullName: "", email: "", uid: "")
 }

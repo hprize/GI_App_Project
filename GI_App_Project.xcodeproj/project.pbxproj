@@ -26,6 +26,8 @@
 		6F0C679E2A11BD2E0076658E /* Home_TimeLinePart_One.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0C679D2A11BD2E0076658E /* Home_TimeLinePart_One.swift */; };
 		6F0C67A22A1314D20076658E /* Home_TimeLinePart_selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0C67A12A1314D20076658E /* Home_TimeLinePart_selection.swift */; };
 		6F32BD1F2A302E1D00D59A0F /* Logo.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F32BD1E2A302E1C00D59A0F /* Logo.xcassets */; };
+		6F32BD5C2A32B64C00D59A0F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6F32BD5B2A32B64C00D59A0F /* FirebaseStorage */; };
+		6F32BD5E2A32B9A000D59A0F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32BD5D2A32B9A000D59A0F /* StorageManager.swift */; };
 		6F86A3082A1D9E30002A9119 /* MealDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F86A3072A1D9E30002A9119 /* MealDataFetcher.swift */; };
 		6F86A34A2A26D557002A9119 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F86A3492A26D557002A9119 /* GoogleService-Info.plist */; };
 		6F86A34D2A26D757002A9119 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6F86A34C2A26D757002A9119 /* FirebaseAuth */; };
@@ -85,6 +87,7 @@
 		6F0C679D2A11BD2E0076658E /* Home_TimeLinePart_One.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_TimeLinePart_One.swift; sourceTree = "<group>"; };
 		6F0C67A12A1314D20076658E /* Home_TimeLinePart_selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home_TimeLinePart_selection.swift; sourceTree = "<group>"; };
 		6F32BD1E2A302E1C00D59A0F /* Logo.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Logo.xcassets; sourceTree = "<group>"; };
+		6F32BD5D2A32B9A000D59A0F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		6F86A3072A1D9E30002A9119 /* MealDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDataFetcher.swift; sourceTree = "<group>"; };
 		6F86A3492A26D557002A9119 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6F86A3522A26D79C002A9119 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 				6F86A34D2A26D757002A9119 /* FirebaseAuth in Frameworks */,
 				6F86A34F2A26D757002A9119 /* FirebaseFirestore in Frameworks */,
 				6F86A3512A26D757002A9119 /* FirebaseFirestoreSwift in Frameworks */,
+				6F32BD5C2A32B64C00D59A0F /* FirebaseStorage in Frameworks */,
 				6F9AAA3B2A28362E00630A44 /* LookinServer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +182,7 @@
 				6F0C67752A0DDC6A0076658E /* GI_App_ProjectTests */,
 				6F0C677F2A0DDC6A0076658E /* GI_App_ProjectUITests */,
 				6F0C67632A0DDC690076658E /* Products */,
+				6F32BD5A2A32B64C00D59A0F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -205,6 +210,7 @@
 				6F0C676B2A0DDC6A0076658E /* Preview Content */,
 				6FA234F82A1C5F6D0083A774 /* MealData.swift */,
 				6F86A3072A1D9E30002A9119 /* MealDataFetcher.swift */,
+				6F32BD5D2A32B9A000D59A0F /* StorageManager.swift */,
 				6F86A3542A26D8AE002A9119 /* AuthViewModel.swift */,
 				6F86A3562A26DD6A002A9119 /* User.swift */,
 				6F9AAA292A2823E800630A44 /* LoginState.swift */,
@@ -242,6 +248,13 @@
 			path = GI_App_ProjectUITests;
 			sourceTree = "<group>";
 		};
+		6F32BD5A2A32B64C00D59A0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,6 +276,7 @@
 				6F86A34E2A26D757002A9119 /* FirebaseFirestore */,
 				6F86A3502A26D757002A9119 /* FirebaseFirestoreSwift */,
 				6F9AAA3A2A28362E00630A44 /* LookinServer */,
+				6F32BD5B2A32B64C00D59A0F /* FirebaseStorage */,
 			);
 			productName = GI_App_Project;
 			productReference = 6F0C67622A0DDC690076658E /* GI_App_Project.app */;
@@ -387,6 +401,7 @@
 			files = (
 				6F0C67922A0DDE760076658E /* HomeView.swift in Sources */,
 				6F9AAA2A2A2823E900630A44 /* LoginState.swift in Sources */,
+				6F32BD5E2A32B9A000D59A0F /* StorageManager.swift in Sources */,
 				6F0C67A22A1314D20076658E /* Home_TimeLinePart_selection.swift in Sources */,
 				33AB610D2A23A6710001AAAE /* Time_TimeLinePart.swift in Sources */,
 				6F86A3082A1D9E30002A9119 /* MealDataFetcher.swift in Sources */,
@@ -567,6 +582,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GI_App_Project/Preview Content\"";
+				DEVELOPMENT_TEAM = RQV3Y9DWQ3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -595,6 +611,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GI_App_Project/Preview Content\"";
+				DEVELOPMENT_TEAM = RQV3Y9DWQ3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -748,6 +765,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		6F32BD5B2A32B64C00D59A0F /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F86A34B2A26D757002A9119 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
 		6F86A34C2A26D757002A9119 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6F86A34B2A26D757002A9119 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
