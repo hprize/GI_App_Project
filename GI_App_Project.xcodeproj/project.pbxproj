@@ -7,8 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33AB610B2A239D8C0001AAAE /* Time_infoPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AB610A2A239D8C0001AAAE /* Time_infoPart.swift */; };
-		33AB610D2A23A6710001AAAE /* Time_TimeLinePart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AB610C2A23A6710001AAAE /* Time_TimeLinePart.swift */; };
+		331929F62A3E968800FD0BAD /* Setting_Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331929F52A3E968800FD0BAD /* Setting_Title.swift */; };
+		331929F82A3E969400FD0BAD /* Setting_sub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331929F72A3E969400FD0BAD /* Setting_sub.swift */; };
+		331929FA2A3E978F00FD0BAD /* Time_TimeBoxPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331929F92A3E978F00FD0BAD /* Time_TimeBoxPart.swift */; };
+		331929FC2A3E97AA00FD0BAD /* Time_TimeBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331929FB2A3E97AA00FD0BAD /* Time_TimeBox.swift */; };
+		331929FE2A3E97B800FD0BAD /* Time_TimeDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331929FD2A3E97B800FD0BAD /* Time_TimeDay.swift */; };
+		33192A002A3E97C300FD0BAD /* Time_TimeDay1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331929FF2A3E97C300FD0BAD /* Time_TimeDay1.swift */; };
+		33192A022A3E97CE00FD0BAD /* Time_TimeDay2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33192A012A3E97CE00FD0BAD /* Time_TimeDay2.swift */; };
+		33192A042A3E97E200FD0BAD /* Time_TimeLinePart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33192A032A3E97E200FD0BAD /* Time_TimeLinePart.swift */; };
+		33192A062A3E97ED00FD0BAD /* Time_Callender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33192A052A3E97ED00FD0BAD /* Time_Callender.swift */; };
+		33192A082A3E980800FD0BAD /* Time_number.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33192A072A3E980800FD0BAD /* Time_number.swift */; };
+		33AB610B2A239D8C0001AAAE /* Time_info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AB610A2A239D8C0001AAAE /* Time_info.swift */; };
 		6F0C67662A0DDC690076658E /* GI_App_ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0C67652A0DDC690076658E /* GI_App_ProjectApp.swift */; };
 		6F0C67682A0DDC690076658E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0C67672A0DDC690076658E /* ContentView.swift */; };
 		6F0C676A2A0DDC6A0076658E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F0C67692A0DDC6A0076658E /* Assets.xcassets */; };
@@ -65,8 +74,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		33AB610A2A239D8C0001AAAE /* Time_infoPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_infoPart.swift; sourceTree = "<group>"; };
-		33AB610C2A23A6710001AAAE /* Time_TimeLinePart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_TimeLinePart.swift; sourceTree = "<group>"; };
+		331929F52A3E968800FD0BAD /* Setting_Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting_Title.swift; sourceTree = "<group>"; };
+		331929F72A3E969400FD0BAD /* Setting_sub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting_sub.swift; sourceTree = "<group>"; };
+		331929F92A3E978F00FD0BAD /* Time_TimeBoxPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_TimeBoxPart.swift; sourceTree = "<group>"; };
+		331929FB2A3E97AA00FD0BAD /* Time_TimeBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_TimeBox.swift; sourceTree = "<group>"; };
+		331929FD2A3E97B800FD0BAD /* Time_TimeDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_TimeDay.swift; sourceTree = "<group>"; };
+		331929FF2A3E97C300FD0BAD /* Time_TimeDay1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_TimeDay1.swift; sourceTree = "<group>"; };
+		33192A012A3E97CE00FD0BAD /* Time_TimeDay2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_TimeDay2.swift; sourceTree = "<group>"; };
+		33192A032A3E97E200FD0BAD /* Time_TimeLinePart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_TimeLinePart.swift; sourceTree = "<group>"; };
+		33192A052A3E97ED00FD0BAD /* Time_Callender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_Callender.swift; sourceTree = "<group>"; };
+		33192A072A3E980800FD0BAD /* Time_number.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_number.swift; sourceTree = "<group>"; };
+		33AB610A2A239D8C0001AAAE /* Time_info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time_info.swift; sourceTree = "<group>"; };
 		6F0C67622A0DDC690076658E /* GI_App_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GI_App_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F0C67652A0DDC690076658E /* GI_App_ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GI_App_ProjectApp.swift; sourceTree = "<group>"; };
 		6F0C67672A0DDC690076658E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -152,8 +170,15 @@
 			isa = PBXGroup;
 			children = (
 				6F0C67932A0DDE9B0076658E /* TimeView.swift */,
-				33AB610A2A239D8C0001AAAE /* Time_infoPart.swift */,
-				33AB610C2A23A6710001AAAE /* Time_TimeLinePart.swift */,
+				33AB610A2A239D8C0001AAAE /* Time_info.swift */,
+				331929F92A3E978F00FD0BAD /* Time_TimeBoxPart.swift */,
+				331929FB2A3E97AA00FD0BAD /* Time_TimeBox.swift */,
+				331929FD2A3E97B800FD0BAD /* Time_TimeDay.swift */,
+				331929FF2A3E97C300FD0BAD /* Time_TimeDay1.swift */,
+				33192A012A3E97CE00FD0BAD /* Time_TimeDay2.swift */,
+				33192A032A3E97E200FD0BAD /* Time_TimeLinePart.swift */,
+				33192A052A3E97ED00FD0BAD /* Time_Callender.swift */,
+				33192A072A3E980800FD0BAD /* Time_number.swift */,
 			);
 			path = Time;
 			sourceTree = "<group>";
@@ -170,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				6F0C67972A0DDEB90076658E /* SettingView.swift */,
+				331929F52A3E968800FD0BAD /* Setting_Title.swift */,
+				331929F72A3E969400FD0BAD /* Setting_sub.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -399,30 +426,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33192A062A3E97ED00FD0BAD /* Time_Callender.swift in Sources */,
 				6F0C67922A0DDE760076658E /* HomeView.swift in Sources */,
 				6F9AAA2A2A2823E900630A44 /* LoginState.swift in Sources */,
 				6F32BD5E2A32B9A000D59A0F /* StorageManager.swift in Sources */,
 				6F0C67A22A1314D20076658E /* Home_TimeLinePart_selection.swift in Sources */,
-				33AB610D2A23A6710001AAAE /* Time_TimeLinePart.swift in Sources */,
 				6F86A3082A1D9E30002A9119 /* MealDataFetcher.swift in Sources */,
 				6F0C679A2A0DE0D30076658E /* Home_NoticePart.swift in Sources */,
 				6F0C679E2A11BD2E0076658E /* Home_TimeLinePart_One.swift in Sources */,
 				6FA234F92A1C5F6D0083A774 /* MealData.swift in Sources */,
 				6F9AAA382A28301B00630A44 /* Home_TimeLinePart.swift in Sources */,
 				6F9AAA322A2824E600630A44 /* SignOutView.swift in Sources */,
+				33192A082A3E980800FD0BAD /* Time_number.swift in Sources */,
 				6F86A3572A26DD6A002A9119 /* User.swift in Sources */,
 				6F0C67682A0DDC690076658E /* ContentView.swift in Sources */,
+				33192A002A3E97C300FD0BAD /* Time_TimeDay1.swift in Sources */,
 				6F9AAA2C2A2824AD00630A44 /* SignInView.swift in Sources */,
+				33192A042A3E97E200FD0BAD /* Time_TimeLinePart.swift in Sources */,
 				6F0C67662A0DDC690076658E /* GI_App_ProjectApp.swift in Sources */,
 				6F86A3532A26D79D002A9119 /* MainView.swift in Sources */,
+				331929F82A3E969400FD0BAD /* Setting_sub.swift in Sources */,
 				6F0C679C2A0DE3350076658E /* Home_MealPart.swift in Sources */,
+				331929F62A3E968800FD0BAD /* Setting_Title.swift in Sources */,
 				6F0C67982A0DDEB90076658E /* SettingView.swift in Sources */,
+				331929FC2A3E97AA00FD0BAD /* Time_TimeBox.swift in Sources */,
 				6F86A3552A26D8AE002A9119 /* AuthViewModel.swift in Sources */,
 				6F9AAA2E2A2824C400630A44 /* SignUpView.swift in Sources */,
 				6F9AAA362A28300400630A44 /* Home_TimeLinePart_Three.swift in Sources */,
-				33AB610B2A239D8C0001AAAE /* Time_infoPart.swift in Sources */,
+				33AB610B2A239D8C0001AAAE /* Time_info.swift in Sources */,
+				331929FE2A3E97B800FD0BAD /* Time_TimeDay.swift in Sources */,
 				6F0C67942A0DDE9B0076658E /* TimeView.swift in Sources */,
 				6F9AAA342A282FF600630A44 /* Home_TimeLinePart_Two.swift in Sources */,
+				33192A022A3E97CE00FD0BAD /* Time_TimeDay2.swift in Sources */,
+				331929FA2A3E978F00FD0BAD /* Time_TimeBoxPart.swift in Sources */,
 				6F0C67962A0DDEA90076658E /* MealView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

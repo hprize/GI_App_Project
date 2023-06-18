@@ -1,11 +1,14 @@
 //
 //  Time_TimeLinePart.swift
-//  GI_App_Project
+//  Gi
 //
-//  Created by Daol on 2023/05/29.
+//  Created by Daol on 2023/06/05.
 //
-
 import SwiftUI
+//    .cornerRadius(14, corners: [.bottomRight, .topRight ])
+
+
+
 
 struct Time_TimeLinePart: View {
     var body: some View {
@@ -13,97 +16,85 @@ struct Time_TimeLinePart: View {
             VStack {
                 ZStack {
                     Rectangle()
-                        .frame(width: 38, height: 66)
-                        .foregroundColor(Color(hex: 0x5762EA))
-                        .cornerRadius(14)
-                    Text("혜화")
-                        .font(.system(size: 14))
-                        .foregroundColor(.white)
-                }
-                HStack {
-                    Divider()
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 40)
-                ZStack {
-                    Rectangle()
-                        .frame(width: 38, height: 66)
-                        .foregroundColor(Color(hex: 0x5762EA))
-                        .cornerRadius(14)
-                    Text("혜화")
-                        .font(.system(size: 14))
-                        .foregroundColor(.white)
-                }
-                HStack {
-                    Divider()
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.leading, 12)
-                ZStack {
-                    Rectangle()
-                        .frame(width: 38, height: 66)
-                        .foregroundColor(.white)
-                        .cornerRadius(14)
-                    Text("혜화")
-                        .font(.system(size: 14))
-                        .foregroundColor(.black)
-                }
-            }
-            .padding(.vertical, 35)
-            .padding(.trailing, -20)
-            .frame(width: 90)
-            
-            VStack {
-                VStack {
-                    HStack {
-                        Text("혜화랩 수업")
-                        Text("9:30 - 12:30")
-                    }
-                    .foregroundColor(Color.white)
-                    HStack {
-                        Text("찾는반 - 수학 / 여는반 - 과학")
-                    }
-                    .foregroundColor(Color.white)
-                }
-                .frame(width: 289, height: 103)
-                .background(Color(hex: 0xFFBF74))
-                .cornerRadius(14)
-                
-                
-                ZStack {
+                           .frame(width: 38, height: 66)
+                           .foregroundColor(Color(hex: 0x5762EA))
+                           .cornerRadius(14, corners: [.bottomRight, .topRight])
+                          
+                    
                     VStack {
-                        HStack {
-                            Text("점심시간")
-                            Text("9:30 - 12:30")
-                        }
+                        Text("혜화")
+                            .font(.system(size: 15))
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                        Text("Lab")
+                            .font(.system(size: 15))
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
                     }
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color.black, lineWidth: 0.5)
-                        .frame(width: 278, height: 38)
                 }
                 
+                
+                Spacer()
+                    .frame(height: 0)
                 
                 VStack {
-                    HStack {
-                        Text("혜화랩 수업")
-                        Text("9:30 - 12:30")
-                    }
-                    .foregroundColor(Color.white)
-                    HStack {
-                        Text("찾는반 - 수학 / 여는반 - 과학")
-                    }
-                    .foregroundColor(Color.white)
+                    Rectangle().frame(width: 1, height: 30)
+                        .foregroundColor(Color.gray)
                 }
-                .frame(width: 289, height: 103)
-                .background(Color(hex: 0x5762EA))
-                .cornerRadius(14)
+                Spacer()
+                    .frame(height: 0)
+                
+                ZStack {
+                    Rectangle()
+                        .frame(width: 38, height: 66)
+                        .foregroundColor(.white)
+                        .cornerRadius(14, corners: [.bottomRight, .topRight ])
+                    VStack {
+                        Text("C")
+                            .font(.system(size: 15))
+                            .fontWeight(.semibold)
+
+                        Text("Lab")
+                            .font(.system(size: 15))
+                            .fontWeight(.semibold)
+
+                    }
+                }
+                
+                
+                Spacer()
+                    .frame(height: 0)
+                VStack {
+                    Rectangle().frame(width: 1, height: 30)
+                        .foregroundColor(Color.gray)
+
+                }
+                
+                Spacer()
+                    .frame(height: 0)
+                
+                ZStack {
+                    Rectangle()
+                        .frame(width: 38, height: 66)
+                        .foregroundColor(.white)
+                        .cornerRadius(14, corners: [.bottomRight, .topRight ])
+                    VStack {
+                        Text("M")
+                            .font(.system(size: 15))
+                            .fontWeight(.semibold)
+
+                        Text("Lab")
+                            .font(.system(size: 15))
+                            .fontWeight(.semibold)
+
+                    }
+                }
+                
             }
-            .padding(.vertical, 20)
-            .padding(.trailing, 10)
         }
-        .frame(width: 364, height: 291)
+        .frame(width: 390, height: 291, alignment: .leading)
         .cornerRadius(14)
-        .shadow(radius: 3)
+        
     }
 }
 
