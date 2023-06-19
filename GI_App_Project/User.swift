@@ -18,3 +18,4 @@ extension User {
     static let sample: User = User(
         profileImageURL: "", fullName: "", email: "", uid: "")
 }
+

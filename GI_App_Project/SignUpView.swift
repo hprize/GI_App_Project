@@ -17,6 +17,8 @@ struct SignUpView: View {
     @State var password: String = ""
     @State var retrySignUp = false
     @State var errorMessage = ""
+    @State var isSelected: Bool = false
+
     
     var body: some View {
         VStack {
@@ -24,27 +26,52 @@ struct SignUpView: View {
                     selection: $selectedItem,
                     matching: .images,
                     photoLibrary: .shared()) {
-                        Text("Select a photo")
+                        if isSelected == false {
+                            ZStack {
+                                Circle()
+                                    .foregroundColor(Color.gray)
+                                    .frame(width: 75, height: 75)
+                                Image(systemName: "plus")
+                                    .resizable()
+                                    .frame(width: 25,height: 25)
+                            }
+                            
+                        }
+                        else {
+                            if let selectedImageData,
+                               let uiImage = UIImage(data: selectedImageData) {
+                                Image(uiImage: uiImage)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .clipShape(Circle())
+                                    .frame(width: 75, height: 75)
+                                    .background {
+                                        Circle().fill(
+                                            LinearGradient(
+                                                colors: [.yellow, .orange],
+                                                startPoint: .top,
+                                                endPoint: .bottom
+                                            )
+                                        )
+                                    }
+
+                            }
+                        }
                     }
-//                    .onChange(of: selectedItem, perform: { newValue in
-//                        Task {
-//                            if let newValue {
-//                                do {
-//                                    try await authViewModel.saveProfileImage(item: newValue)
-//                                } catch {
-//                                    print(error.localizedDescription)
-//                                }
-//                            }
-//                        }
-//                    })
-            if let selectedImageData,
-               let uiImage = UIImage(data: selectedImageData) {
-                Image(uiImage: uiImage)
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 250, height: 250)
-            }
-            
+                    .onChange(of: selectedItem, perform: { newValue in
+                        Task {
+                            if let newValue {
+                                do {
+                                    if let data = try? await newValue.loadTransferable(type: Data.self) {
+                                                selectedImageData = data
+                                                isSelected = true
+                                            }
+                                } catch {
+                                    print(error.localizedDescription)
+                                }
+                            }
+                        }
+                    })
             
             TextField(
                 "이름을 입력해주세요.",
