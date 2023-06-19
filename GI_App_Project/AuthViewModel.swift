@@ -62,7 +62,6 @@ final class AuthViewModel: ObservableObject {
     
     func saveProfileImage(item: PhotosPickerItem) async throws -> String{
         guard let data = try await item.loadTransferable(type: Data.self) else { return ""}
-        
         let (path, _) = try await StorageManager.shared.saveImage(data: data)
         profileImageURL = path
         return path
