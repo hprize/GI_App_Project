@@ -15,29 +15,32 @@ struct SignInView: View {
     @State var errorMessage = ""
 
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Spacer()
-            VStack {
+            VStack (spacing: 0){
                 Image("GI_ImageLogo_Blue")
                     .resizable()
                     .frame(width: 45,height: 45.08)
+                Spacer()
+                    .frame(height: 14)
                 Image("GI_TextLogo_Blue")
                     .resizable()
                     .frame(width: 90,height: 28.28)
             }
             Spacer()
                 .frame(height: 78)
-            VStack {
+            VStack (spacing: 0){
                 TextField(
                     "이메일을 입력해주세요.",
                     text: $email
                 )
-                .frame(width: 300, height: 51)
                 .textFieldStyle(PlainTextFieldStyle())
-                .padding([.horizontal], 4)
-                .cornerRadius(26)
-                .overlay(RoundedRectangle(cornerRadius: 26).stroke(Color(hex: 0xD9D9D9)) .frame(width: 333, height: 51))
-                .padding([.horizontal], 24)
+                .padding()
+                .background(
+                    Capsule()
+                        .strokeBorder(Color(hex: 0xD9D9D9), lineWidth: 1)
+                )
+                .frame(height: 51)
                 .textInputAutocapitalization(.never)
                 
                 Spacer()
@@ -47,12 +50,13 @@ struct SignInView: View {
                     "비밀번호를 입력해주세요.",
                     text: $password
                 )
-                .frame(width: 300, height: 51)
                 .textFieldStyle(PlainTextFieldStyle())
-                .padding([.horizontal], 4)
-                .cornerRadius(26)
-                .overlay(RoundedRectangle(cornerRadius: 26).stroke(Color(hex: 0xD9D9D9)) .frame(width: 333, height: 51))
-                .padding([.horizontal], 24)
+                .padding()
+                .background(
+                    Capsule()
+                        .strokeBorder(Color(hex: 0xD9D9D9), lineWidth: 1)
+                )
+                .frame(height: 51)
                 .textInputAutocapitalization(.never)
             }
             
@@ -91,6 +95,7 @@ struct SignInView: View {
             }
             Spacer()
         }
+        .frame(width: 333)
         .alert("로그인 실패", isPresented: $retrySignIn) {
             Button {
                 retrySignIn = false
