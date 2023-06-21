@@ -34,10 +34,10 @@ final class AuthViewModel: ObservableObject {
         loginState = Auth.auth().currentUser != nil ? .loggedIn : .loggedOut
     }
     
-    func registerUser(item: PhotosPickerItem, withEmail email: String, password: String, fullName: String) async throws {
+    func registerUser(item: PhotosPickerItem, nickName: String, withEmail email: String, password: String, fullName: String) async throws {
         let result = try await Auth.auth().createUser(withEmail: email, password: password)
         let profileImageURL = try await saveProfileImage(item: item)
-        let user = User(profileImageURL: profileImageURL, fullName: fullName, email: email, uid: result.user.uid)
+        let user = User(profileImageURL: profileImageURL, nickName: nickName, fullName: fullName, email: email, uid: result.user.uid)
         try await storeUser(with: user)
         loginState = .loggedIn
     }
