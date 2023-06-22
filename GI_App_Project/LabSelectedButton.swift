@@ -20,6 +20,8 @@ struct LabSelectedButton: View {
                 .foregroundColor(isLabSelected ? color: Color(hex: 0xEDEDEF))
             Text(text)
                 .foregroundColor(isLabSelected ? textColor: Color(hex: 0x707070))
+                .font(.system(size: 16))
+                .fontWeight(.light)
         }
     }
 }
