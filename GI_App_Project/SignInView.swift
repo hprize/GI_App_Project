@@ -34,6 +34,8 @@ struct SignInView: View {
                     "이메일을 입력해주세요.",
                     text: $email
                 )
+                .font(.system(size: 16))
+                .fontWeight(.light)
                 .textFieldStyle(PlainTextFieldStyle())
                 .padding()
                 .background(
@@ -44,12 +46,14 @@ struct SignInView: View {
                 .textInputAutocapitalization(.never)
                 
                 Spacer()
-                    .frame(height: 15)
+                    .frame(maxHeight: 15)
                 
                 SecureField(
                     "비밀번호를 입력해주세요.",
                     text: $password
                 )
+                .font(.system(size: 16))
+                .fontWeight(.light)
                 .textFieldStyle(PlainTextFieldStyle())
                 .padding()
                 .background(
@@ -61,7 +65,7 @@ struct SignInView: View {
             }
             
             Spacer()
-                .frame(height: 28)
+                .frame(maxHeight: 28)
 
             Button {
                 Task {
@@ -75,7 +79,7 @@ struct SignInView: View {
                 }
             } label: {
                 Text("로그인")
-                    .fontWeight(.semibold)
+                    .fontWeight(.medium)
                     .font(.system(size: 23))
                     .foregroundColor(.white)
                     .padding()
@@ -85,13 +89,16 @@ struct SignInView: View {
             }
             
             Spacer()
-                .frame(height: 92)
+                .frame(maxHeight: 92)
 
             Button {
                 authViewModel.loginState = .notSigned
             } label: {
                 Text("아직 회원이 아니신가요?")
+                    .font(.system(size: 18))
+                    .fontWeight(.regular)
                     .foregroundColor(Color(hex: 0x5762EA))
+                    .underline()
             }
             Spacer()
         }

@@ -8,6 +8,7 @@
 import Foundation
 
 struct User: Codable {
+    let labNumber: String
     let profileImageURL: String
     let nickName: String
     let fullName: String
@@ -17,6 +18,6 @@ struct User: Codable {
 
 extension User {
     static let sample: User = User(
-        profileImageURL: "", nickName: "", fullName: "", email: "", uid: "")
+        labNumber: "", profileImageURL: "", nickName: "", fullName: "", email: "", uid: "")
 }
 
