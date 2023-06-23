@@ -1,16 +1,32 @@
 //
-//  TimeView.swift
-//  GI_App_Project
+//  ContentView.swift
+//  Gi
 //
-//  Created by 이준후 on 2023/05/12.
+//  Created by Daol on 2023/06/05.
 //
 
 import SwiftUI
 
 struct TimeView: View {
     var body: some View {
-        Text("g")
+        VStack {
+            Time_info()
+            Spacer()
+                .frame(height: 20)
+            
+            Time_TimeBoxPart()
+            
+            Spacer()
+                .frame(height: -20)
+            
+            Time_Callender()
+            
+            Spacer()
+                .frame(height: 0)
+
+        }
     }
+
 }
 
 struct TimeView_Previews: PreviewProvider {
