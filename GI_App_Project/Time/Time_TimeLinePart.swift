@@ -5,9 +5,6 @@
 //  Created by Daol on 2023/06/05.
 //
 import SwiftUI
-//    .cornerRadius(14, corners: [.bottomRight, .topRight ])
-
-
 
 
 struct Time_TimeLinePart: View {
