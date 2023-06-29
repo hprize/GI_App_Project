@@ -9,29 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject private var fetcher = MealDataFetcher()
-    @State private var selection = 0
+    @State var selectedTab = ""
+    @State var TabSelection = 1
+    
+    init() {
+        UITabBar.appearance().isHidden = true
+//        UITabBar.appearance().shadowImage = UIImage()
+//        UITabBar.appearance().backgroundImage = UIImage()
+//        UITabBar.appearance().isTranslucent = true
+    }
+    
     var body: some View {
-        TabView (selection: $selection){
+        VStack(spacing: 0) {
+            TabView (selection: $TabSelection){
                 HomeView()
-                    .tabItem {
-                        Image(systemName: "house.fill")
-                        Text("홈")
-                    } .tag(0)
+                    .tag(1)
                 TimeView()
-                    .tabItem {
-                        Image(systemName: "clock.fill")
-                        Text("시간표")
-                    } .tag(1)
+                    .tag(2)
                 MealView()
-                    .tabItem {
-                        Image(systemName: "person.fill")
-                        Text("급식")
-                    } .tag(2)
-                SignOutView()
-                    .tabItem {
-                        Image(systemName: "gearshape.fill")
-                        Text("설정")
-                    } .tag(3)
+                    .tag(3)
+                SettingView()
+                    .tag(4)
             }
             .environmentObject(fetcher)
             .task {
@@ -43,9 +41,11 @@ struct ContentView: View {
                     print(error)
                 }
             }
+            MainTabBar(TabSelection: $TabSelection, selectedTab: $selectedTab)
         }
+        .ignoresSafeArea()
     }
-
+}
 
 extension Color {
     init(hex: UInt, alpha: Double = 1) {
@@ -58,6 +58,8 @@ extension Color {
         )
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

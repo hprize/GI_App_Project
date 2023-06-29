@@ -50,6 +50,8 @@
 		6F32BD5E2A32B9A000D59A0F /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F32BD5D2A32B9A000D59A0F /* StorageManager.swift */; };
 		6F74E1442A3FEE9300D4E3DF /* OtherItems.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F74E1432A3FEE9300D4E3DF /* OtherItems.xcassets */; };
 		6F74E1622A4000B300D4E3DF /* LabSelectedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F74E1612A4000B200D4E3DF /* LabSelectedButton.swift */; };
+		6F74E1802A4A6D7800D4E3DF /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F74E17F2A4A6D7800D4E3DF /* MainTabBar.swift */; };
+		6F74E1862A4A762900D4E3DF /* TabBarItems.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F74E1852A4A762900D4E3DF /* TabBarItems.xcassets */; };
 		6F86A3082A1D9E30002A9119 /* MealDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F86A3072A1D9E30002A9119 /* MealDataFetcher.swift */; };
 		6F86A34A2A26D557002A9119 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F86A3492A26D557002A9119 /* GoogleService-Info.plist */; };
 		6F86A34D2A26D757002A9119 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6F86A34C2A26D757002A9119 /* FirebaseAuth */; };
@@ -132,6 +134,8 @@
 		6F32BD5D2A32B9A000D59A0F /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		6F74E1432A3FEE9300D4E3DF /* OtherItems.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = OtherItems.xcassets; sourceTree = "<group>"; };
 		6F74E1612A4000B200D4E3DF /* LabSelectedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabSelectedButton.swift; sourceTree = "<group>"; };
+		6F74E17F2A4A6D7800D4E3DF /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		6F74E1852A4A762900D4E3DF /* TabBarItems.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabBarItems.xcassets; sourceTree = "<group>"; };
 		6F86A3072A1D9E30002A9119 /* MealDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDataFetcher.swift; sourceTree = "<group>"; };
 		6F86A3492A26D557002A9119 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6F86A3522A26D79C002A9119 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -297,6 +301,7 @@
 				6F0C67652A0DDC690076658E /* GI_App_ProjectApp.swift */,
 				6F86A3522A26D79C002A9119 /* MainView.swift */,
 				6F0C67672A0DDC690076658E /* ContentView.swift */,
+				6F74E17F2A4A6D7800D4E3DF /* MainTabBar.swift */,
 				6F0C67932A0DDE9B0076658E /* TimeView.swift */,
 				6F0C67972A0DDEB90076658E /* SettingView.swift */,
 				33AB61072A2385320001AAAE /* Time */,
@@ -316,6 +321,7 @@
 				6F9AAA312A2824E600630A44 /* SignOutView.swift */,
 				6F74E1432A3FEE9300D4E3DF /* OtherItems.xcassets */,
 				6F32BD1E2A302E1C00D59A0F /* Logo.xcassets */,
+				6F74E1852A4A762900D4E3DF /* TabBarItems.xcassets */,
 			);
 			path = GI_App_Project;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 				6F0C67902A0DDD700076658E /* .gitattributes in Resources */,
 				6F0C676A2A0DDC6A0076658E /* Assets.xcassets in Resources */,
 				6F32BD1F2A302E1D00D59A0F /* Logo.xcassets in Resources */,
+				6F74E1862A4A762900D4E3DF /* TabBarItems.xcassets in Resources */,
 				6F74E1442A3FEE9300D4E3DF /* OtherItems.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,6 +546,7 @@
 				334D56BE2A49202B00AD6731 /* Time_Alpha1Day2.swift in Sources */,
 				6F9AAA2E2A2824C400630A44 /* SignUpView.swift in Sources */,
 				6F9AAA362A28300400630A44 /* Home_TimeLinePart_Three.swift in Sources */,
+				6F74E1802A4A6D7800D4E3DF /* MainTabBar.swift in Sources */,
 				334D56C02A49204900AD6731 /* Time_Alpha2Box.swift in Sources */,
 				33AB610B2A239D8C0001AAAE /* Time_info.swift in Sources */,
 				6F0C67942A0DDE9B0076658E /* TimeView.swift in Sources */,
