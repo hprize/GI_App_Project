@@ -9,103 +9,153 @@ import SwiftUI
 
 struct Home_TimeLinePart_One: View {
     var body: some View {
-        VStack {
-            HStack {
-                VStack {
-                    HStack {
-                        Circle()
-                            .frame(width: 13, height: 13)
-                            .foregroundColor(Color(hex: 0x5762EA))
-                        Text("09 : 30")
-                            .font(.system(size: 14))
-                    }
-                    HStack {
-                        Divider()
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 12)
-                    HStack {
-                        Circle()
-                            .frame(width: 13, height: 13)
-                            .foregroundColor(Color(hex: 0x5762EA))
-                        Text("09 : 30")
-                            .font(.system(size: 14))
-                    }
-                    HStack {
-                        Divider()
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.leading, 12)
-                    HStack {
-                        Circle()
-                            .stroke(Color.black, lineWidth: 0.5)
-                            .frame(width: 13, height: 13)
-                            .foregroundColor(Color.white)
-                        Text("09 : 30")
-                            .font(.system(size: 14))
-                    }
-                }
-                .padding(.vertical, 35)
-                .padding(.trailing, 10)
-                .frame(width: 90)
-                
-                VStack {
-                    VStack {
-                        HStack {
-                            Text("혜화랩 수업")
-                            Text("9:30 - 12:30")
-                        }
-                        .foregroundColor(Color.white)
-                        HStack {
-                            Text("찾는반 - 수학 / 여는반 - 과학")
-                        }
-                        .foregroundColor(Color.white)
-                    }
-                    .frame(width: 252, height: 83)
-                    .background(Color(hex: 0xFFBF74))
-                    .cornerRadius(5)
+        ZStack {
+            RoundedRectangle(cornerRadius: 9)
+                .frame(width: 364, height: 291)
+                .foregroundColor(Color.white)
+                .shadow(color: Color.black.opacity(0.15), radius: 6)
+            VStack(spacing: 0) {
+                HStack(spacing: 0) {
                     
-                    Spacer()
-                    
-                    ZStack {
-                        VStack {
-                            HStack {
-                                Text("점심시간")
-                                Text("9:30 - 12:30")
+                    // -----------------------------
+                    HStack(spacing: 0) {
+                        VStack(spacing: 0) {
+                            Circle()
+                                .frame(width: 13, height: 13)
+                                .foregroundColor(Color(hex: 0x5762EA))
+                            HStack(spacing: 0) {
+                                Divider()
                             }
+                            .padding(.vertical, 8)
+                            Circle()
+                                .frame(width: 13, height: 13)
+                                .foregroundColor(Color(hex: 0x5762EA))
+                            HStack(spacing: 0) {
+                                Divider()
+                            }
+                            .padding(.vertical, 8)
+                            Circle()
+                                .stroke(Color.black, lineWidth: 0.5)
+                                .frame(width: 13, height: 13)
+                                .foregroundColor(Color.white)
                         }
-                        .frame(width: 252, height: 31)
-                        RoundedRectangle(cornerRadius: 5)
-                            .stroke(Color.black, lineWidth: 0.5)
-                            .frame(width: 252, height: 31)
+                        .padding(.vertical, 34)
                         
+                        Spacer()
+                            .frame(maxWidth: 10)
+                        
+                        VStack {
+                            Text("09 : 30")
+                                .font(.system(size: 14))
+                                .fontWeight(.medium)
+                                .foregroundColor(Color(hex: 0x707070))
+                            Spacer()
+                            Text("12 : 30")
+                                .font(.system(size: 14))
+                                .fontWeight(.medium)
+                                .foregroundColor(Color(hex: 0x707070))
+                            Spacer()
+                            Text("02 : 00")
+                                .font(.system(size: 14))
+                                .fontWeight(.medium)
+                                .foregroundColor(Color(hex: 0x707070))
+                        }
+                        .padding(.vertical, 32)
                     }
+                    
+                    // ----------------------- 왼쪽 타임라인 표시
                     
                     Spacer()
+                        .frame(maxWidth: 14)
                     
-                    
-                    VStack {
-                        HStack {
-                            Text("혜화랩 수업")
-                            Text("9:30 - 12:30")
+                    VStack(spacing: 0) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 5)
+                                .foregroundColor(Color(hex: 0xFFBF74))
+                                .frame(width: 252, height: 83)
+                            VStack(alignment: .leading, spacing: 0) {
+                                HStack(spacing: 0) {
+                                    Text("혜화랩 수업")
+                                        .font(.system(size: 16))
+                                        .fontWeight(.medium)
+                                    Spacer()
+                                    Text("9:30 - 12:30")
+                                        .font(.system(size: 12))
+                                        .fontWeight(.regular)
+                                }
+                                .padding(.horizontal, 21)
+                                .foregroundColor(Color.white)
+                                Spacer()
+                                    .frame(maxHeight: 14)
+                                HStack(spacing: 0) {
+                                    Text("찾는반 - 수학 / 여는반 - 과학")
+                                        .font(.system(size: 15))
+                                        .fontWeight(.light)
+                                }
+                                .padding(.horizontal, 21)
+                                .foregroundColor(Color.white)
+                            }
+                            .frame(width: 252)
                         }
-                        .foregroundColor(Color.white)
-                        HStack {
-                            Text("찾는반 - 수학 / 여는반 - 과학")
+                        
+                        Spacer()
+                        
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color(hex: 0x707070), lineWidth: 0.5)
+                                .frame(width: 252, height: 31)
+                            VStack(spacing: 0) {
+                                HStack(spacing: 0) {
+                                    Text("점심시간")
+                                        .font(.system(size: 16))
+                                        .fontWeight(.medium)
+                                    Spacer()
+                                    Text("12:30 - 2:00")
+                                        .font(.system(size: 12))
+                                        .fontWeight(.regular)
+                                }
+                                .padding(.horizontal, 21)
+                            }
+                            .frame(width: 252, height: 31)
+                            
                         }
-                        .foregroundColor(Color.white)
+                        
+                        Spacer()
+                        
+                        
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 5)
+                                .foregroundColor(Color(hex: 0x5762EA))
+                                .frame(width: 252, height: 83)
+                            VStack(alignment: .leading, spacing: 0) {
+                                HStack(spacing: 0) {
+                                    Text("프로젝트 / 체육")
+                                        .font(.system(size: 16))
+                                        .fontWeight(.medium)
+                                    Spacer()
+                                    Text("2:00 - 5:00")
+                                        .font(.system(size: 12))
+                                        .fontWeight(.regular)
+                                }
+                                .padding(.horizontal, 21)
+                                .foregroundColor(Color.white)
+                                Spacer()
+                                    .frame(maxHeight: 14)
+                                HStack(spacing: 0) {
+                                    Text("라라, 히치, 단테, 수선 - 체육")
+                                        .font(.system(size: 15))
+                                        .fontWeight(.light)
+                                }
+                                .padding(.horizontal, 21)
+                                .foregroundColor(Color.white)
+                            }
+                            .frame(width: 252)
+                        }
                     }
-                    .frame(width: 252, height: 83)
-                    .background(Color(hex: 0x5762EA))
-                    .cornerRadius(5)
+                    .padding(.vertical, 24)
                 }
-                .padding(.vertical, 20)
-                .padding(.trailing, 10)
+                .frame(width: 364, height: 291)
             }
-            .frame(width: 364, height: 291)
-            .background(Color.white)
-            .cornerRadius(9)
-            .shadow(radius: 3)
         }
     }
 }

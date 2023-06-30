@@ -52,15 +52,19 @@ struct HomeView: View {
             Spacer()
                 .frame(maxHeight: 36)
             
-            ScrollView (.vertical){
-                VStack(spacing: 0){
-                    Text(fetcher.menuData.results[0].properties.menu1.richText[0].plainText)
+            // ----------------------------------
+            
+            ScrollView(.vertical) {
+                VStack(spacing: 0) {
+                    Text("공지사항")
                         .font(.system(size: 20))
                         .fontWeight(.semibold)
                         .foregroundColor(Color(hex: 0x5762EA))
                         .frame(width: 364, alignment: .leading)
                     Home_NoticePart()
                         .padding(.vertical, 20)
+                    Spacer()
+                        .frame(height: 20)
                     Text("오늘의 점심")
                         .font(.system(size: 20))
                         .fontWeight(.semibold)
@@ -69,9 +73,10 @@ struct HomeView: View {
                     
                     Home_MealPart()
                         .padding(.vertical, 20)
+                    Spacer()
+                        .frame(height: 20)
                     Home_TimeLinePart()
                 }
-                .frame(width: 393)
             }
         }
     }
