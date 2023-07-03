@@ -14,20 +14,23 @@ struct HomeView: View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
                 
-                HStack(spacing: 15) {
+                HStack(spacing: 0) {
+                    Spacer()
+                        .frame(width: 15)
                     Image("GI_ImageLogo_Blue")
                         .resizable()
                         .frame(width: 29, height: 29)
+                    
+                    Spacer()
+                        .frame(width: 15.5)
                     
                     Image("GI_TextLogo_Blue")
                         .resizable()
                         .frame(width: 58, height: 18)
                 }
-                .padding(.leading, 27)
                 
                 
                 Spacer()
-                    .frame(width: 204)
                 
                 NavigationLink {
                     SettingView()
@@ -37,17 +40,17 @@ struct HomeView: View {
                         .frame(width: 23, height: 23)
                 }
                 Spacer()
-                    .frame(width: 11.3)
+                    .frame(maxWidth: 11)
                 
                 NavigationLink {
                     SettingView()
                 } label: {
                     Image("alram")
                         .resizable()
-                        .frame(width: 22, height: 23)
+                        .frame(width: 23, height: 23)
                 }
                 Spacer()
-                    .frame(width: 22)
+                    .frame(width: 16)
             }
             Spacer()
                 .frame(maxHeight: 36)

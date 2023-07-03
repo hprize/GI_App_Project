@@ -14,9 +14,6 @@ struct ContentView: View {
     
     init() {
         UITabBar.appearance().isHidden = true
-//        UITabBar.appearance().shadowImage = UIImage()
-//        UITabBar.appearance().backgroundImage = UIImage()
-//        UITabBar.appearance().isTranslucent = true
     }
     
     var body: some View {
