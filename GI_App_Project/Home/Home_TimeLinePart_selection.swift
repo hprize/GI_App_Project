@@ -19,7 +19,7 @@ struct Home_TimeLinePart_selection: View {
     
     var body: some View {
         ZStack {
-            HStack {
+            HStack (spacing: 13){
                 ForEach(0..<3) { index in
                     Button {
                         tabSelection = index + 1
@@ -37,6 +37,7 @@ struct Home_TimeLinePart_selection: View {
                             else {
                                 RoundedRectangle(cornerRadius: 12)
                                     .foregroundColor(.clear)
+                                    .frame(width: 113, height: 35)
                             }
                         }
                         .foregroundColor(index + 1 == tabSelection ? .white : .gray)

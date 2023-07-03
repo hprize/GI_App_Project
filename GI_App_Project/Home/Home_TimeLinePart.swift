@@ -11,7 +11,7 @@ struct Home_TimeLinePart: View {
     @State private var tabSelction = 1
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             Home_TimeLinePart_selection(tabSelection: $tabSelction)
             TabView(selection: $tabSelction) {
                 Home_TimeLinePart_One()
@@ -22,7 +22,7 @@ struct Home_TimeLinePart: View {
                     .tag(3)
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
-            .frame(width: 393, height: 330)
+            .frame(height: 327)
             .ignoresSafeArea()
         }
     }

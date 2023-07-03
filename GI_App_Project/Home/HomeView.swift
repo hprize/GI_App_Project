@@ -11,26 +11,76 @@ struct HomeView: View {
     
     @EnvironmentObject var fetcher: MealDataFetcher
     var body: some View {
-        ScrollView (.vertical){
-            VStack {
-                Text(fetcher.menuData.results[0].properties.menu1.richText[0].plainText)
-                    .font(.system(size: 20))
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color(hex: 0x5762EA))
-                    .frame(width: 364, alignment: .leading)
-                Home_NoticePart()
-                    .padding(.vertical, 20)
-                Text("오늘의 점심")
-                    .font(.system(size: 20))
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color(hex: 0x5762EA))
-                    .frame(width: 364, alignment: .leading)
+        VStack(spacing: 0) {
+            HStack(spacing: 0) {
+                
+                HStack(spacing: 0) {
+                    Spacer()
+                        .frame(width: 15)
+                    Image("GI_ImageLogo_Blue")
+                        .resizable()
+                        .frame(width: 29, height: 29)
                     
-                Home_MealPart()
-                    .padding(.vertical, 20)
-                Home_TimeLinePart()
+                    Spacer()
+                        .frame(width: 15.5)
+                    
+                    Image("GI_TextLogo_Blue")
+                        .resizable()
+                        .frame(width: 58, height: 18)
+                }
+                
+                
+                Spacer()
+                
+                NavigationLink {
+                    SettingView()
+                } label: {
+                    Image("set")
+                        .resizable()
+                        .frame(width: 23, height: 23)
+                }
+                Spacer()
+                    .frame(maxWidth: 11)
+                
+                NavigationLink {
+                    SettingView()
+                } label: {
+                    Image("alram")
+                        .resizable()
+                        .frame(width: 23, height: 23)
+                }
+                Spacer()
+                    .frame(width: 16)
             }
-            .frame(width: 393)
+            Spacer()
+                .frame(maxHeight: 36)
+            
+            // ----------------------------------
+            
+            ScrollView(.vertical) {
+                VStack(spacing: 0) {
+                    Text("공지사항")
+                        .font(.system(size: 20))
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color(hex: 0x5762EA))
+                        .frame(width: 364, alignment: .leading)
+                    Home_NoticePart()
+                        .padding(.vertical, 20)
+                    Spacer()
+                        .frame(height: 20)
+                    Text("오늘의 점심")
+                        .font(.system(size: 20))
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color(hex: 0x5762EA))
+                        .frame(width: 364, alignment: .leading)
+                    
+                    Home_MealPart()
+                        .padding(.vertical, 20)
+                    Spacer()
+                        .frame(height: 20)
+                    Home_TimeLinePart()
+                }
+            }
         }
     }
 }
