@@ -8,7 +8,32 @@
 import SwiftUI
 
 struct Home_MealPart: View {
+    @EnvironmentObject var model: MealDataModel
+    @State var indexNum: Int = 0
+    @State var isAfternoon: Bool = true
+    @State var AmBackColor: Color = Color.white
+    @State var AmTextColor: Color = Color.white
+    @State var PmBackColor: Color = Color.white
+    @State var PmTextColor: Color = Color.white
+    
+    func changeColor() {
+        if isAfternoon == false {
+            AmBackColor = Color.white
+            AmTextColor = Color(hex: 0x707070)
+            PmBackColor = Color(hex: 0x5762EA)
+            PmTextColor = Color.white
+            
+        } else {
+            AmBackColor = Color(hex: 0x5762EA)
+            AmTextColor = Color.white
+            PmBackColor = Color.white
+            PmTextColor = Color(hex: 0x707070)
+        }
+    }
+
+    
     var body: some View {
+        
         ZStack {
             RoundedRectangle(cornerRadius: 9)
                 .frame(width: 364, height: 249)
@@ -20,8 +45,8 @@ struct Home_MealPart: View {
                         .font(.system(size: 18))
                         .fontWeight(.semibold)
                         .frame(width: 115, height: 35)
-                        .foregroundColor(Color(hex: 0xffffff))
-                        .background(Color(hex: 0x5762EA))
+                        .foregroundColor(AmTextColor)
+                        .background(AmBackColor)
                         .cornerRadius(6)
                     
                     Spacer()
@@ -31,8 +56,8 @@ struct Home_MealPart: View {
                         .font(.system(size: 18))
                         .fontWeight(.semibold)
                         .frame(width: 115, height: 35)
-                        .foregroundColor(Color(hex: 0x707070))
-                        .background(Color(hex: 0xffffff))
+                        .foregroundColor(PmTextColor)
+                        .background(PmBackColor)
                         .cornerRadius(6)
                 }
                 Spacer()
@@ -40,90 +65,101 @@ struct Home_MealPart: View {
                 HStack(spacing: 0) {
                     VStack(spacing: 11) {
                         HStack(spacing: 0) {
-                            Text("짬뽕국")
+                            Text(model.list.count == 0 ? "      " : model.list[indexNum].lunchMenu1)
                                 .font(.system(size: 16))
                                 .fontWeight(.medium)
                             Spacer()
                             Image(systemName: "heart")
                                 .foregroundColor(Color(hex: 0xB7B7B7))
                         }
+                        .redacted(reason: model.list.count == 0 ? .placeholder : [])
                         HStack(spacing: 0) {
-                            Text("잡곡밥")
+                            Text(model.list.count == 0 ? "      " : model.list[indexNum].lunchMenu2)
                                 .font(.system(size: 16))
                                 .fontWeight(.medium)
                             Spacer()
                             Image(systemName: "heart")
                                 .foregroundColor(Color(hex: 0xB7B7B7))
                         }
+                        .redacted(reason: model.list.count == 0 ? .placeholder : [])
                         HStack(spacing: 0) {
-                            Text("콩나물 무침")
+                            Text(model.list.count == 0 ? "      " : model.list[indexNum].lunchMenu3)
                                 .font(.system(size: 16))
                                 .fontWeight(.medium)
                             Spacer()
                             Image(systemName: "heart")
                                 .foregroundColor(Color(hex: 0xB7B7B7))
                         }
+                        .redacted(reason: model.list.count == 0 ? .placeholder : [])
                         HStack(spacing: 0) {
-                            Text("새송이 버섯 볶음")
+                            Text(model.list.count == 0 ? "      " : model.list[indexNum].lunchMenu4)
                                 .font(.system(size: 16))
                                 .fontWeight(.medium)
                             Spacer()
                             Image(systemName: "heart")
                                 .foregroundColor(Color(hex: 0xB7B7B7))
                         }
+                        .redacted(reason: model.list.count == 0 ? .placeholder : [])
                         HStack(spacing: 0) {
-                            Text("돼지갈비")
+                            Text(model.list.count == 0 ? "      " : model.list[indexNum].lunchMenu5)
                                 .font(.system(size: 16))
                                 .fontWeight(.medium)
                             Spacer()
                             Image(systemName: "heart")
                                 .foregroundColor(Color(hex: 0xB7B7B7))
                         }
+                        .redacted(reason: model.list.count == 0 ? .placeholder : [])
                     }
                     Divider()
                         .background(Color(hex: 0xB7B7B7))
                         .padding(.horizontal, 17)
+                    
                     VStack(spacing: 11) {
                         HStack(spacing: 0) {
-                            Text("짬뽕국")
+                            Text(model.list.count == 0 ? "      " : model.list[indexNum].dinnerMenu1)
                                 .font(.system(size: 16))
                                 .fontWeight(.medium)
                             Spacer()
                             Image(systemName: "heart")
                                 .foregroundColor(Color(hex: 0xB7B7B7))
                         }
+                        .redacted(reason: model.list.count == 0 ? .placeholder : [])
                         HStack(spacing: 0) {
-                            Text("잡곡밥")
+                            Text(model.list.count == 0 ? "      " : model.list[indexNum].dinnerMenu2)
                                 .font(.system(size: 16))
                                 .fontWeight(.medium)
                             Spacer()
                             Image(systemName: "heart")
                                 .foregroundColor(Color(hex: 0xB7B7B7))
                         }
+                        .redacted(reason: model.list.count == 0 ? .placeholder : [])
                         HStack(spacing: 0) {
-                            Text("콩나물 무침")
+                            Text(model.list.count == 0 ? "      " : model.list[indexNum].dinnerMenu3)
                                 .font(.system(size: 16))
                                 .fontWeight(.medium)
                             Spacer()
                             Image(systemName: "heart")
                                 .foregroundColor(Color(hex: 0xB7B7B7))
                         }
+                        .redacted(reason: model.list.count == 0 ? .placeholder : [])
                         HStack(spacing: 0) {
-                            Text("새송이 버섯 볶음")
+                            Text(model.list.count == 0 ? "      " : model.list[indexNum].dinnerMenu4)
                                 .font(.system(size: 16))
                                 .fontWeight(.medium)
                             Spacer()
                             Image(systemName: "heart")
                                 .foregroundColor(Color(hex: 0xB7B7B7))
                         }
+                        .redacted(reason: model.list.count == 0 ? .placeholder : [])
                         HStack(spacing: 0) {
-                            Text("돼지갈비")
+                            Text(model.list.count == 0 ? "      " : model.list[indexNum].dinnerMenu5)
                                 .font(.system(size: 16))
                                 .fontWeight(.medium)
                             Spacer()
                             Image(systemName: "heart")
                                 .foregroundColor(Color(hex: 0xB7B7B7))
                         }
+                        .redacted(reason: model.list.count == 0 ? .placeholder : [])
                     }
                 }
                 .frame(maxHeight: 166)
@@ -131,11 +167,16 @@ struct Home_MealPart: View {
             }
             .frame(width: 364, height: 249)
         }
+        .onAppear{
+            indexNum = model.checkCurrentDay()
+            isAfternoon = model.checkCurrentTime()
+            changeColor()
+        }
     }
 }
-
-struct Home_MealPart_Previews: PreviewProvider {
-    static var previews: some View {
-        Home_MealPart()
-    }
-}
+//
+//struct Home_MealPart_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Home_MealPart()
+//    }
+//}

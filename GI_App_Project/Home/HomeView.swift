@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @EnvironmentObject var fetcher: MealDataFetcher
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
@@ -87,6 +86,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView().environmentObject(MealDataFetcher())
+        HomeView()
     }
 }
