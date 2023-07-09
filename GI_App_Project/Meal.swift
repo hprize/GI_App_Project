@@ -9,6 +9,7 @@ import Foundation
 
 struct MealData: Identifiable {
     var id: String
+    var Date: [String]
     var lunchTime: String
     var lunchMenu1: String
     var lunchMenu2: String
@@ -23,5 +24,6 @@ struct MealData: Identifiable {
     var dinnerMenu4: String
     var dinnerMenu5: String
     var dinnerMenu6: String
+    
     
 }

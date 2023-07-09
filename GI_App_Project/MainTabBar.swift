@@ -72,6 +72,6 @@ struct TabBarButton: View {
             })
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(height: 101)
+        .frame(height: 69)
     }
 }

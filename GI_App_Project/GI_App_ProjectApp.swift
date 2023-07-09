@@ -23,12 +23,12 @@ struct GI_App_ProjectApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var authViewModel = AuthViewModel()
     @StateObject var mealDataModel = MealDataModel()
+
     
     
     var body: some Scene {
         WindowGroup {
-            
-//            ContentView()
+
             MainView()
                 .task {
                     mealDataModel.getData()
