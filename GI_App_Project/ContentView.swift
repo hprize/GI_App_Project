@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var fetcher = MealDataFetcher()
     @State var selectedTab = ""
     @State var TabSelection = 1
     
@@ -25,18 +24,8 @@ struct ContentView: View {
                     .tag(2)
                 MealView()
                     .tag(3)
-                SettingView()
+                SignOutView()
                     .tag(4)
-            }
-            .environmentObject(fetcher)
-            .task {
-                do
-                {
-                    try await fetcher.sendRequest()
-                    
-                } catch {
-                    print(error)
-                }
             }
             MainTabBar(TabSelection: $TabSelection, selectedTab: $selectedTab)
         }
