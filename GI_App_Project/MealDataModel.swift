@@ -57,6 +57,7 @@ class MealDataModel: ObservableObject {
                         self.list = snapshot.documents.map { d in
                             
                             return MealData(id: d.documentID,
+                                            Date: d["Date"] as? Array ?? [],
                                             lunchTime: d["lunchTime"] as? String ?? "",
                                             lunchMenu1: d["lunchMenu1"] as? String ?? "",
                                             lunchMenu2: d["lunchMenu2"] as? String ?? "",
@@ -86,13 +87,15 @@ class MealDataModel: ObservableObject {
     func checkCurrentDay() -> Int {
         var num: Int
         switch (self.Day) {
-        case ("월") : num = 0
-        case ("화") : num = 1
-        case ("수") : num = 2
-        case ("목") : num = 3
-        case ("금") : num = 4
+        case ("Mon") : num = 0
+        case ("Tue") : num = 1
+        case ("Wed") : num = 2
+        case ("Thu") : num = 3
+        case ("Fri") : num = 4
+        case ("Sat") : num = 4
+        case ("Sun") : num = 4
         default:
-            num = 5
+            num = 6
         }
         return num
     }

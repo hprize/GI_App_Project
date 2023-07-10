@@ -12,8 +12,7 @@ struct Time_info: View {
     @State private var isSettingViewActive = false
     
     var body: some View {
-        
-        
+
         HStack {
             
             HStack(spacing: 15) {

@@ -11,46 +11,7 @@ struct HomeView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            HStack(spacing: 0) {
-                
-                HStack(spacing: 0) {
-                    Spacer()
-                        .frame(width: 15)
-                    Image("GI_ImageLogo_Blue")
-                        .resizable()
-                        .frame(width: 29, height: 29)
-                    
-                    Spacer()
-                        .frame(width: 15.5)
-                    
-                    Image("GI_TextLogo_Blue")
-                        .resizable()
-                        .frame(width: 58, height: 18)
-                }
-                
-                
-                Spacer()
-                
-                NavigationLink {
-                    SettingView()
-                } label: {
-                    Image("set")
-                        .resizable()
-                        .frame(width: 23, height: 23)
-                }
-                Spacer()
-                    .frame(maxWidth: 11)
-                
-                NavigationLink {
-                    SettingView()
-                } label: {
-                    Image("alram")
-                        .resizable()
-                        .frame(width: 23, height: 23)
-                }
-                Spacer()
-                    .frame(width: 16)
-            }
+            TopNavigationBar(imageLogo: "GI_ImageLogo_Blue", TextLogo: "GI_TextLogo_Blue", AlarmItem: "NavigationBarBell_Blue", SettingItem: "NavigationBarSetting_Blue")
             Spacer()
                 .frame(maxHeight: 36)
             

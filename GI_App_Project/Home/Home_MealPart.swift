@@ -168,9 +168,9 @@ struct Home_MealPart: View {
             .frame(width: 364, height: 249)
         }
         .onAppear{
+            changeColor()
             indexNum = model.checkCurrentDay()
             isAfternoon = model.checkCurrentTime()
-            changeColor()
         }
     }
 }
