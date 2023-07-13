@@ -33,7 +33,7 @@ struct TimeLinePart_selection: View {
                             .cornerRadius(14, corners: [.bottomRight, .topRight])
                             .matchedGeometryEffect(id: "SelecedTabId", in: animationNamespace)
                     } else {
-                        RoundedRectangle(cornerRadius: 12)
+                        Rectangle()
                             .frame(width: 38, height: 66)
                             .foregroundColor(.white)
                             .cornerRadius(14, corners: [.bottomRight, .topRight])
@@ -75,7 +75,7 @@ struct TimeLinePart_selection: View {
                             .cornerRadius(14, corners: [.bottomRight, .topRight])
                             .matchedGeometryEffect(id: "SelecedTabId", in: animationNamespace)
                     } else {
-                        RoundedRectangle(cornerRadius: 12)
+                        Rectangle()
                             .frame(width: 38, height: 66)
                             .foregroundColor(.white)
                             .cornerRadius(14, corners: [.bottomRight, .topRight])
@@ -117,7 +117,7 @@ struct TimeLinePart_selection: View {
                             .cornerRadius(14, corners: [.bottomRight, .topRight])
                             .matchedGeometryEffect(id: "SelecedTabId", in: animationNamespace)
                     } else {
-                        RoundedRectangle(cornerRadius: 12)
+                       Rectangle()
                             .frame(width: 38, height: 66)
                             .foregroundColor(.white)
                             .cornerRadius(14, corners: [.bottomRight, .topRight])
@@ -136,3 +136,4 @@ struct TimeLinePart_selection_Previews: PreviewProvider {
         TimeLinePart_selection(tabSelection: .constant(1))
     }
 }
+

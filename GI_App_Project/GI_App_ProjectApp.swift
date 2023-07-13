@@ -23,6 +23,7 @@ struct GI_App_ProjectApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var authViewModel = AuthViewModel()
     @StateObject var mealDataModel = MealDataModel()
+    @StateObject var timeDataFetcher = TimeDataFetcher()
 
     
     
@@ -35,6 +36,7 @@ struct GI_App_ProjectApp: App {
                 }
                 .environmentObject(authViewModel)
                 .environmentObject(mealDataModel)
+                .environmentObject(timeDataFetcher)
         }
     }
 }

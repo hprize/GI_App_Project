@@ -8,114 +8,150 @@
 import SwiftUI
 
 struct Time_Alpha2Day1: View {
+    @EnvironmentObject var timeDataFetcher: TimeDataFetcher
+
+    @Binding var currentDate: Date
+
+    
     var body: some View {
         ZStack {
             Rectangle()
                 .frame(width: 288, height: 317)
                 .cornerRadius(14)
                 .foregroundColor(Color.white)
-                .shadow(radius: 5)
-            
+                .shadow(radius: 3)
             
             VStack {
                 Spacer()
                     .frame(height: 16.5)
                 
                 VStack (alignment: .center) {
-                    Text("06/02")
-                        .font(.system(size: 13))
+                    Text("\(extraDate()[0]).\(extraDate()[1])")                        .font(.system(size: 13))
                     
-                    Text("Tue")
-                        .font(.system(size: 25))
+                    Text("\(getPreviousDayOfWeek(currentDate: currentDate))")                        .font(.system(size: 25))
                         .fontWeight(.black)
                         .foregroundColor(Color(hex: 0x5762EA))
                 }
                 
                 Spacer()
                     .frame(height: 9.5)
-                VStack {
-                    HStack {
-                        Text("혜화랩 수업")
-                            .font(.system(size: 20))
-                            .padding(.trailing, 60)
-                        Text("9:30 - 12:30")
-                            .font(.system(size: 15))
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    if let timeschuele = timeDataFetcher.timeData {
                         
+                        HStack {
+                            Text("\(timeschuele.results[3].properties.랩.richText[0].plainText) 수업" )
+                                .font(.system(size: 20))
+                                .fontWeight(.semibold)
+                            
+                            
+                            Text("9:30 - 12:30")
+                                .font(.system(size: 15))
+                                .fontWeight(.regular)
+                                .padding(.leading, 55)
+        
+                        }
                     }
-                    .foregroundColor(Color.white)
-                    
-                    Spacer()
-                        .frame(height: 10)
-                    
-                    HStack {
-                        Text("찾는반 - 수학 / 여는반 - 과학")
-                            .padding(.trailing, 50)
-                        
-                    }
-                    .foregroundColor(Color.white)
+              
+                        if let timeschuele = timeDataFetcher.timeData {
+                            Text("\(timeschuele.results[21].properties.dayTime.title [0].plainText)")
+                                .font(.system(size: 18))
+                                .fontWeight(.regular)
+
+
+                        }
                 }
+                .foregroundColor(Color.white)
                 .frame(width: 289, height: 103)
                 .background(Color(hex: 0xFFBF74))
                 .cornerRadius(6, corners: [.topLeft, .topRight])
+               
                 
-                Spacer()
-                    .frame(height: 0)
                 HStack {
-                    
-                    Spacer()
-                        .frame(width:12)
                     Text("점심시간")
                         .font(.system(size: 16))
                     
                     Spacer()
-                        .frame(width:105)
+                        .frame(width: 80)
 
-                    
                     Text("12:30 - 2:00")
                         .font(.system(size: 15))
-                    
-                    Spacer()
-                        .frame(width:10)
+                        .padding(.leading,15)
+                 
                 }
-                .frame(width: 289, height: 38)
+                .frame(width: 289, height: 27)
+
+                
+        
                 
                 
-                Spacer()
-                    .frame(height: 0)
-                
-                VStack {
-                    HStack {
-                        Text("오후 프로젝트")
-                            .font(.system(size: 20))
-                            .padding(.trailing, 45)
-                        Text("9:30 - 12:30")
-                            .font(.system(size: 15))
-                        
-                    }
-                    .foregroundColor(Color.white)
-                    
-                    Spacer()
-                        .frame(height: 10)
-                    
-                    HStack {
-                        Text("라라, 히치, 단테, 수선 - 체육")
-                            .padding(.trailing, 55)
-                    }
-                    .foregroundColor(Color.white)
-                }
-                .frame(width: 289, height: 104)
-                .background(Color(hex: 0x5762EA))
-                .cornerRadius(14, corners: [.bottomLeft, .bottomRight ])
-                
-            }
+                   VStack(alignment: .leading, spacing: 10) {
+                       if let timeschuele = timeDataFetcher.timeData {
+                           
+                       HStack {
+                          
+                               Text("\(timeschuele.results[0].properties.랩.richText[0].plainText)")
+                                   .font(.system(size: 20))
+                                   .fontWeight(.semibold)
+                               
+                               Text("2:00 - 5:00")
+                               .font(.system(size: 15))
+                               .fontWeight(.regular)
+                               .padding(.leading, 40)
+                               
+                           }
+                       }
+        
+                       if let timeschuele = timeDataFetcher.timeData {
+                           Text("\(timeschuele.results[18].properties.dayTime.title [0].plainText)")
+                               .fontWeight(.regular)
+                               .foregroundColor(Color.white)
+                  
+                       }
+                   }
+                   .foregroundColor(Color.white)
+                   .frame(width: 289, height: 104)
+                   .background(Color(hex: 0x5762EA))
+                   .cornerRadius(14, corners: [.bottomLeft, .bottomRight ])
+               }
+
+               
             
         }
-        .offset(x:15)
+        .task {
+            do {
+                try await timeDataFetcher.sendRequest()
+            } catch {
+                print(String(describing: error))
             }
+        }
+        
+        .offset(x:15)
+        
+    }
+    
+    func getPreviousDayOfWeek(currentDate: Date) -> String {
+        let calendar = Calendar.current
+        let previousDate = calendar.date(byAdding: .day, value: +1, to: currentDate)!
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEE"
+        let dayOfWeek = formatter.string(from: previousDate)
+        return dayOfWeek
+    }
+    
+    func extraDate() -> [String] {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd"
+        
+        let date = formatter.string(from: currentDate)
+        
+        return date.components(separatedBy: "/")
+        
+    }
 }
 
 struct Time_Alpha2Day1_Previews: PreviewProvider {
     static var previews: some View {
-        Time_Alpha2Day1()
+        Time_Alpha2Day1(currentDate: .constant(Date()))
     }
 }

@@ -1,31 +1,15 @@
 //
-//  Time_TimeDay.swift
-//  Gi
+//  Time_HyehwaDay5.swift
+//  GI_App_Project
 //
-//  Created by Daol on 2023/06/06.
+//  Created by Daol on 2023/07/10.
 //
+
 import SwiftUI
 
-extension View {
-    func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
-        clipShape(RoundedCorner(radius: radius, corners: corners))
-    }
-}
-
-struct RoundedCorner: Shape {
-    var radius: CGFloat = .infinity
-    var corners: UIRectCorner = .allCorners
-    
-    func path(in rect: CGRect) -> Path {
-        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-        
-        return Path(path.cgPath)
-    }
-}
-
-
-struct Time_HyehwaDay: View {
+struct Time_HyehwaDay5: View {
     @EnvironmentObject var timeDataFetcher: TimeDataFetcher
+
     @Binding var currentDate: Date
 
     
@@ -44,7 +28,7 @@ struct Time_HyehwaDay: View {
                 VStack (alignment: .center) {
                     Text("\(extraDate()[0]).\(extraDate()[1])")                        .font(.system(size: 13))
                     
-                    Text("\(getMonthDay(currentDate: currentDate))")                        .font(.system(size: 25))
+                    Text("\(getPreviousDayOfWeek(currentDate: currentDate))")                        .font(.system(size: 25))
                         .fontWeight(.black)
                         .foregroundColor(Color(hex: 0x5762EA))
                 }
@@ -54,9 +38,9 @@ struct Time_HyehwaDay: View {
                 
                 VStack(alignment: .leading, spacing: 10) {
                     if let timeschuele = timeDataFetcher.timeData {
-                         
+                        
                         HStack {
-                            Text("\(timeschuele.results[16].properties.랩.richText[0].plainText) 수업" )
+                            Text("\(timeschuele.results[3].properties.랩.richText[0].plainText) 수업" )
                                 .font(.system(size: 20))
                                 .fontWeight(.semibold)
                             
@@ -70,7 +54,7 @@ struct Time_HyehwaDay: View {
                     }
               
                         if let timeschuele = timeDataFetcher.timeData {
-                            Text("\(timeschuele.results[17].properties.dayTime.title [0].plainText)")
+                            Text("\(timeschuele.results[21].properties.dayTime.title [0].plainText)")
                                 .font(.system(size: 18))
                                 .fontWeight(.regular)
 
@@ -84,11 +68,8 @@ struct Time_HyehwaDay: View {
                
                 
                 HStack {
-                   
                     Text("점심시간")
                         .font(.system(size: 16))
-                        .fontWeight(.medium)
-
                     
                     Spacer()
                         .frame(width: 80)
@@ -96,60 +77,68 @@ struct Time_HyehwaDay: View {
                     Text("12:30 - 2:00")
                         .font(.system(size: 15))
                         .padding(.leading,15)
-
                  
                 }
                 .frame(width: 289, height: 27)
-                
-             
-                VStack(alignment: .leading, spacing: 10) {
-                    if let timeschuele = timeDataFetcher.timeData {
-                        
-                    HStack {
-                       
-                            Text("\(timeschuele.results[19].properties.랩.richText[0].plainText)")
-                                .font(.system(size: 20))
-                                .fontWeight(.semibold)
-                            
-                            Text("2:00 - 5:00")
-                            .font(.system(size: 15))
-                            .fontWeight(.regular)
-                            .padding(.leading, 40)
-                            
-                        }
-                    }
-     
-                    if let timeschuele = timeDataFetcher.timeData {
-                        Text("\(timeschuele.results[19].properties.dayTime.title[0].plainText)")
-                            .fontWeight(.regular)
-                            .foregroundColor(Color.white)
-               
-                    }
-                }
-                .foregroundColor(Color.white)
-                .frame(width: 289, height: 104)
-                .background(Color(hex: 0x5762EA))
-                .cornerRadius(14, corners: [.bottomLeft, .bottomRight ])
-            }
 
-            
+                
+        
+                
+                
+                   VStack(alignment: .leading, spacing: 10) {
+                       if let timeschuele = timeDataFetcher.timeData {
+                           
+                       HStack {
+                          
+                               Text("\(timeschuele.results[0].properties.랩.richText[0].plainText)")
+                                   .font(.system(size: 20))
+                                   .fontWeight(.semibold)
+                               
+                               Text("2:00 - 5:00")
+                               .font(.system(size: 15))
+                               .fontWeight(.regular)
+                               .padding(.leading, 40)
+                               
+                           }
+                       }
+        
+                       if let timeschuele = timeDataFetcher.timeData {
+                           Text("\(timeschuele.results[18].properties.dayTime.title [0].plainText)")
+                               .fontWeight(.regular)
+                               .foregroundColor(Color.white)
+                  
+                       }
+                   }
+                   .foregroundColor(Color.white)
+                   .frame(width: 289, height: 104)
+                   .background(Color(hex: 0x5762EA))
+                   .cornerRadius(14, corners: [.bottomLeft, .bottomRight ])
+               }
+
+               
             
         }
-     
+        .task {
+            do {
+                try await timeDataFetcher.sendRequest()
+            } catch {
+                print(String(describing: error))
+            }
+        }
         
         .offset(x:15)
         
     }
     
-    func getMonthDay(currentDate: Date) -> String {
+    
+    func getPreviousDayOfWeek(currentDate: Date) -> String {
+        let calendar = Calendar.current
+        let previousDate = calendar.date(byAdding: .day, value: +5, to: currentDate)!
         let formatter = DateFormatter()
         formatter.dateFormat = "EEE"
         formatter.locale = Locale(identifier: "en")
-        
-        let date = formatter.string(from: currentDate)
-        
-        return date
-        
+        let dayOfWeek = formatter.string(from: previousDate)
+        return dayOfWeek
     }
     
     func extraDate() -> [String] {
@@ -163,8 +152,8 @@ struct Time_HyehwaDay: View {
     }
 }
 
-struct Time_HyehwaDay_Previews: PreviewProvider {
+struct Time_HyehwaDay5_Previews: PreviewProvider {
     static var previews: some View {
-        Time_HyehwaDay(currentDate: .constant(Date())).environmentObject(TimeDataFetcher())
+        Time_HyehwaDay5(currentDate: .constant(Date())).environmentObject(TimeDataFetcher())
     }
 }

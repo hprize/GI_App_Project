@@ -9,17 +9,29 @@ import SwiftUI
 
 
 struct Time_Alpha2Box: View {
+    @EnvironmentObject var timeDataFetcher: TimeDataFetcher
+
     var body: some View {
         TabView {
-            Time_Alpha2Day()
-                .frame(width: 288, height: 317)
-                .offset(y:-10)
-            
-            
-            Time_Alpha2Day1()
+            Time_Alpha2Day(currentDate: .constant(Date()))
                 .frame(width: 288, height: 317)
             
-            Time_Alpha2Day2()
+            Time_Alpha2Day1(currentDate: .constant(Date()))
+                .frame(width: 288, height: 317)
+            
+            Time_Alpha2Day2(currentDate: .constant(Date()))
+                .frame(width: 288, height: 317)
+            
+            Time_Alpha2Day3(currentDate: .constant(Date()))
+                .frame(width: 288, height: 317)
+            
+            Time_Alpha2Day4(currentDate: .constant(Date()))
+                .frame(width: 288, height: 317)
+            
+            Time_Alpha2Day5(currentDate: .constant(Date()))
+                .frame(width: 288, height: 317)
+            
+            Time_Alpha2Day6(currentDate: .constant(Date()))
                 .frame(width: 288, height: 317)
             
         }
@@ -31,6 +43,6 @@ struct Time_Alpha2Box: View {
 }
 struct Time_Alpha2Box_Previews: PreviewProvider {
     static var previews: some View {
-        Time_Alpha2Box()
+        Time_Alpha2Box().environmentObject(TimeDataFetcher())
     }
 }
