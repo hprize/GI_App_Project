@@ -19,7 +19,6 @@ struct Time_sellectView: View {
                 Time_Alpha2Box()
                     .tag(3)
             }
-            .tabViewStyle(.page(indexDisplayMode: .always))
             .frame(width: 393, height: 430)
            
             

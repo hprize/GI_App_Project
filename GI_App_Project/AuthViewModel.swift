@@ -7,7 +7,6 @@
 
 import Foundation
 import PhotosUI
-
 import Firebase
 import FirebaseAuth
 import FirebaseFirestore

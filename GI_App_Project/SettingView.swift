@@ -8,34 +8,45 @@
 import SwiftUI
 
 struct SettingView: View {
-    var body: some View {
-        VStack {
-        
-            Setting_Title()
-            Spacer()
-                .frame(height: 56)
-            
-            Setting_sub()
-            Spacer()
-                .frame(height: 37)
-         
-            ZStack {
-                Rectangle()
-                    .foregroundColor(Color(hex: 0x5762EA))
-                    .cornerRadius(22)
-                    .frame(width: 135, height: 43)
+    
+    @EnvironmentObject var authViewModel: AuthViewModel
 
-                Text("로그아웃")
+    var body: some View {
+        NavigationView {
+            VStack {
                 
-                    .font(.system(size: 18))
-                    .foregroundColor(Color.white)
-                    .fontWeight(.bold)
-                    
+                Setting_Title()
+                Spacer()
+                    .frame(height:60)
                 
-             
+                Setting_sub()
+                Spacer()
+                    .frame(height: 37)
+                
+                Button {
+                    Task {
+                        do {
+                            try await authViewModel.signOutUser()
+                        } catch {
+                            print("DEBUG: Failed to sign out \(error.localizedDescription)")
+                        }
+                    }
+                } label: {
+                    Text("로그아웃")
+                        .fontWeight(.bold)
+                        .font(.system(size: 18))
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(width: 135,height: 45)
+                        .background(Color(hex: 0x5762EA))
+                        .cornerRadius(36)
+                }
+                Spacer()
+                    .frame(height: 55)
             }
-            Spacer()
-                .frame(height: 55)
+            .padding(.bottom,30)
+            .padding(.top, 100)
+            
         }
     }
 }

@@ -37,7 +37,7 @@ struct Setting_Title: View {
                     .frame(width: 64, height: 25)
                     .background(Color.white)
                     .cornerRadius(14)
-                    .shadow(radius: 2)
+                    .shadow(radius: 1)
                 
             }
             .padding(.leading, -15)

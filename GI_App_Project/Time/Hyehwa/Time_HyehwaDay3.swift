@@ -1,18 +1,19 @@
 //
-//  Time_TimeDay1.swift
-//  Gi
+//  Time_HyehwaDay3.swift
+//  GI_App_Project
 //
-//  Created by Daol on 2023/06/06.
+//  Created by Daol on 2023/07/10.
 //
-
 
 import SwiftUI
 
-struct Time_HyehwaDay1: View {
+struct Time_HyehwaDay3: View {
+   
     @EnvironmentObject var timeDataFetcher: TimeDataFetcher
-    @Binding var currentDate: Date
 
-    
+        @Binding var currentDate: Date
+
+        
     var body: some View {
         ZStack {
             Rectangle()
@@ -40,7 +41,7 @@ struct Time_HyehwaDay1: View {
                     if let timeschuele = timeDataFetcher.timeData {
                         
                         HStack {
-                            Text("\(timeschuele.results[16].properties.랩.richText[0].plainText) 수업" )
+                            Text("\(timeschuele.results[3].properties.랩.richText[0].plainText) 수업" )
                                 .font(.system(size: 20))
                                 .fontWeight(.semibold)
                             
@@ -54,7 +55,7 @@ struct Time_HyehwaDay1: View {
                     }
               
                         if let timeschuele = timeDataFetcher.timeData {
-                            Text("\(timeschuele.results[16].properties.dayTime.title [0].plainText)")
+                            Text("\(timeschuele.results[21].properties.dayTime.title [0].plainText)")
                                 .font(.system(size: 18))
                                 .fontWeight(.regular)
 
@@ -80,7 +81,7 @@ struct Time_HyehwaDay1: View {
                  
                 }
                 .frame(width: 289, height: 27)
-                
+
                 
         
                 
@@ -90,7 +91,7 @@ struct Time_HyehwaDay1: View {
                            
                        HStack {
                           
-                               Text("\(timeschuele.results[13].properties.랩.richText[0].plainText)")
+                               Text("\(timeschuele.results[0].properties.랩.richText[0].plainText)")
                                    .font(.system(size: 20))
                                    .fontWeight(.semibold)
                                
@@ -103,7 +104,7 @@ struct Time_HyehwaDay1: View {
                        }
         
                        if let timeschuele = timeDataFetcher.timeData {
-                           Text("\(timeschuele.results[13].properties.dayTime.title [0].plainText)")
+                           Text("\(timeschuele.results[18].properties.dayTime.title [0].plainText)")
                                .fontWeight(.regular)
                                .foregroundColor(Color.white)
                   
@@ -130,29 +131,31 @@ struct Time_HyehwaDay1: View {
         
     }
     
-    func getPreviousDayOfWeek(currentDate: Date) -> String {
-        let calendar = Calendar.current
-        let previousDate = calendar.date(byAdding: .day, value: +1, to: currentDate)!
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEE"
-        formatter.locale = Locale(identifier: "en")
-        let dayOfWeek = formatter.string(from: previousDate)
-        return dayOfWeek
+        
+        func getPreviousDayOfWeek(currentDate: Date) -> String {
+            let calendar = Calendar.current
+            let previousDate = calendar.date(byAdding: .day, value: +3, to: currentDate)!
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEE"
+            formatter.locale = Locale(identifier: "en")
+            let dayOfWeek = formatter.string(from: previousDate)
+            return dayOfWeek
+        }
+        
+        func extraDate() -> [String] {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "MM/dd"
+            
+            let date = formatter.string(from: currentDate)
+            
+            return date.components(separatedBy: "/")
+            
+        }
     }
-    
-    func extraDate() -> [String] {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd"
-        
-        let date = formatter.string(from: currentDate)
-        
-        return date.components(separatedBy: "/")
-        
-    }
-}
 
-struct Time_HyehwaDay1_Previews: PreviewProvider {
+
+struct Time_HyehwaDay3_Previews: PreviewProvider {
     static var previews: some View {
-        Time_HyehwaDay1(currentDate: .constant(Date())).environmentObject(TimeDataFetcher())
+        Time_HyehwaDay3(currentDate: .constant(Date())).environmentObject(TimeDataFetcher())
     }
 }
